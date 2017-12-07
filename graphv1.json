@@ -1,0 +1,173 @@
+{
+	"nodeBoxWidth": 300,
+	"nodes": [
+		{
+			"key": 0,
+			"title": "ФИО-1",
+			"icon": "sap-icon://manager",
+			"status": "Success",
+			"group": "D1",
+			"attributes": [
+				{
+					"label": "Должность",
+					"value": "Начальник департамента"
+				},
+				{
+					"label": "Кол-во подчиненных",
+					"value": "10"
+				}
+			]			
+		},
+		{
+			"key": 1,
+			"title": "ФИО-2",
+			"icon": "sap-icon://employee",
+			"status": "Success",
+			"group":"D1",
+			"attributes": [
+				{
+					"label": "Должность:",
+					"value": "Зам-начальника департамента"
+				},
+				{
+					"label": "Кол-во подчиненных:",
+					"value": "5"
+				}
+			]				
+		},
+		{
+			"key": 2,
+			"title": "ФИО-2",
+			"icon": "sap-icon://employee",
+			"status": "Success",
+			"group":"D1",
+			"attributes": [
+				{
+					"label": "Должность:",
+					"value": "Зам-начальника департамента"
+				},
+				{
+					"label": "Кол-во подчиненных:",
+					"value": "5"
+				}
+			]				
+		},
+		{
+			"key": 3,
+			"title": "ФИО-3",
+			"icon": "sap-icon://employee",
+			"status": "Success",
+			"group":"O1",
+			"attributes": [
+				{
+					"label": "Должность:",
+					"value": "Начальник отдела"
+				},
+				{
+					"label": "Кол-во подчиненных:",
+					"value": "5"
+				}
+			]				
+		},		
+		{
+			"key": 4,
+			"title": "ФИО-4",
+			"icon": "sap-icon://employee",
+			"group":"O1",
+			"status": "Success",
+			"attributes": [
+				{
+					"label": "Должность:",
+					"value": "Обычный сотрудник"
+				}
+			]				
+		},		
+		{
+			"key": 5,
+			"title": "ФИО-5",
+			"icon": "sap-icon://employee",
+			"group":"O1",
+			"status": "Success",
+			"attributes": [
+				{
+					"label": "Должность:",
+					"value": "Обычный сотрудник"
+				}
+			]				
+		},		
+		{
+			"key": 6,
+			"title": "ФИО-6",
+			"icon": "sap-icon://employee",
+			"status": "Success",
+			"group":"O2",
+			"attributes": [
+				{
+					"label": "Должность:",
+					"value": "Начальник отдела"
+				},
+				{
+					"label": "Кол-во подчиненных:",
+					"value": "5"
+				}
+			]				
+		},				
+		{
+			"key": 7,
+			"title": "ФИО-7",
+			"icon": "sap-icon://employee",
+			"status": "Success",
+			"group":"O2",
+			"attributes": [
+				{
+					"label": "Должность:",
+					"value": "Обычный сотрудник"
+				}
+			]				
+		}				
+	],
+	"lines": [
+		{
+			"from": 0,
+			"to": 1
+		},
+		{
+			"from": 0,
+			"to": 2
+		},
+		{
+			"from": 1,
+			"to": 3
+		},		
+		{
+			"from": 3,
+			"to": 4
+		},		
+		{
+			"from": 3,
+			"to": 5
+		},
+		{
+			"from": 2,
+			"to": 6
+		},
+		{
+			"from": 6,
+			"to": 7
+		}		
+	],
+	"groups": [
+		{
+			"key": "D1",
+			"title": "Департамент 1"
+		},
+		{
+			"key": "O1",
+			"title": "Отдел 1"
+		},
+		{
+			"key": "O2",
+			"title": "Отдел 2"
+		}
+	]
+}

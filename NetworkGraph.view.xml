@@ -1,0 +1,114 @@
+<mvc:View
+		controllerName="sap.suite.ui.commons.sample.NetworkGraph.NetworkGraph"
+		xmlns="sap.suite.ui.commons.networkgraph"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:l="sap.ui.layout"
+		xmlns:core="sap.ui.core"
+		xmlns:layout="sap.suite.ui.commons.networkgraph.layout"
+		xmlns:m="sap.m"
+		height="100%">
+	<l:FixFlex vertical="true">
+		<!--
+		<l:fixContent>
+			<m:OverflowToolbar>
+				<m:content>
+					<m:Select id="orientation" tooltip="Orientation" selectedKey="{settings>/orientation}">
+						<core:Item key="LeftRight" text="Left-Right"/>
+						<core:Item key="RightLeft" text="Right-Left"/>
+						<core:Item key="TopBottom" text="Top-Bottom"/>
+					</m:Select>
+					<m:Select id="nodePlacement" tooltip="Node placement" selectedKey="{settings>/nodePlacement}">
+						<core:Item key="BrandesKoepf" text="Brandes-Koepf"/>
+						<core:Item key="LinearSegments" text="Linear Segments"/>
+						<core:Item key="Simple" text="Simple"/>
+					</m:Select>
+					<m:Select id="arrowPosition" tooltip="Arrow position" selectedKey="{settings>/arrowPosition}">
+						<core:Item key="Start" text="Arrow Start"/>
+						<core:Item key="Middle" text="Arrow Middle"/>
+						<core:Item key="End" text="Arrow End"/>
+					</m:Select>
+					<m:Select id="arrowOrientation" tooltip="Arrow orientation" selectedKey="{settings>/arrowOrientation}">
+						<core:Item key="ParentOf" text="Parent -> Child"/>
+						<core:Item key="ChildOf" text="Child -> Parent"/>
+						<core:Item key="None" text="Hidden"/>
+					</m:Select>
+					<m:Select id="mergeEdges" tooltip="Merge Edges" change="mergeChanged" selectedKey="0">
+						<core:Item key="0" text="Split edges"/>
+						<core:Item key="1" text="Merged edges"/>
+					</m:Select>
+					<m:Select id="nodeSpacing" tooltip="Node Spacing" selectedKey="55" change="spacingChanged">
+						<core:Item key="20" text="Node spacing (20)"/>
+						<core:Item key="40" text="Node spacing (40)"/>
+						<core:Item key="55" text="Node spacing (55)"/>
+						<core:Item key="80" text="Node spacing (80)"/>
+						<core:Item key="100" text="Node spacing (100)"/>
+					</m:Select>
+				</m:content>
+			</m:OverflowToolbar>
+		</l:fixContent>
+		-->
+		<l:flexContent>
+			<l:FixFlex vertical="false" fixContentSize="75%">
+				<l:fixContent>
+					<Graph
+							orientation="{settings>/orientation}"
+							nodes="{/nodes}"
+							lines="{/lines}"
+							groups="{/groups}"
+							id="graph">
+						<layoutData>
+							<m:FlexItemData minWidth="75%" maxWidth="75%"/>
+						</layoutData>
+						<layoutAlgorithm>
+							<layout:LayeredLayout
+									mergeEdges="{settings>/mergeEdges}"
+									nodePlacement="{settings>/nodePlacement}"
+									nodeSpacing="{settings>/nodeSpacing}"/>
+						</layoutAlgorithm>
+						<nodes>
+							<Node
+									key="{key}"
+									title="{title}"
+									icon="{icon}"
+									group="{group}"
+									attributes="{path:'attributes', templateShareable:true}"
+									shape="Box"
+									status="{status}"
+									heigth="200"
+									width="250">
+								<attributes>
+									<ElementAttribute
+											label="{label}"
+											value="{value}"/>
+								</attributes>
+							</Node>
+						</nodes>
+						<lines>
+							<Line
+									arrowPosition="{settings>/arrowPosition}"
+									arrowOrientation="{settings>/arrowOrientation}"
+									from="{from}"
+									to="{to}"
+									status="{status}">
+							</Line>
+						</lines>
+						<groups>
+							<Group
+									key="{key}"
+									title="{title}"
+									icon="sap-icon://action-settings">
+							</Group>
+						</groups>
+					</Graph>
+				</l:fixContent>
+				<l:flexContent>
+					<GraphMap id="map" graph="graph">
+						<layoutData>
+							<m:FlexItemData minWidth="25%" maxWidth="25%"/>
+						</layoutData>
+					</GraphMap>
+				</l:flexContent>
+			</l:FixFlex>
+		</l:flexContent>
+	</l:FixFlex>
+</mvc:View>
